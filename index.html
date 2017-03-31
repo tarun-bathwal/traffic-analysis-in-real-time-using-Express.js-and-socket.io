@@ -1,0 +1,17 @@
+<html>
+<head>
+<title>traffic analyser</title>
+<script src="https://code.jquery.com/jquery-3.2.0.min.js"></script>
+<script src="socket.io/socket.io.js"></script>
+    <script>
+        var socket = io();
+        
+        	socket.emit('message',{"url": window.location.href});
+        
+    </script>
+</head>
+<body>
+<p>this is index.</p>
+<a href="/">clik</a>
+</body>
+</html>

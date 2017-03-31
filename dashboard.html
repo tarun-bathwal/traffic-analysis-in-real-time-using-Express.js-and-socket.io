@@ -1,0 +1,25 @@
+
+<html>
+<title>display result of traffic analysis</title>
+<body>
+<h1>Real Time Page Views</h1>
+<table id="pageViews">
+	<tr>
+		<td>url</td>
+		<td>ip</td>
+		<td>xdomain</td>
+		<td>timestamp</td>
+		<td>no of users</td>
+	</tr>
+</table>
+<script src="https://code.jquery.com/jquery-3.2.0.min.js"></script>
+<script src="socket.io/socket.io.js"></script>
+<script>
+    var socket = io();
+        socket.on('pageview', function (msg) {
+            $('#pageViews').append('<tr><td>' + msg.url +"</td><td> " + msg.ip + "</td><td> " + msg.xdomain + "</td><td> " + msg.timestamp + "</td><td>" +msg.users+ '</td></tr>');
+        });
+    
+</script>
+</body>
+</html>
